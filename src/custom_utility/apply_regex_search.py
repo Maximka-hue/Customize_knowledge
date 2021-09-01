@@ -26,7 +26,7 @@ before_ext_lib = re.compile(r"""^(?P<simple_name> {main_name})[-_, #]*?         
 #after_ext = re.compile("(?P<name>.+?)(?P<sgn>(?<=[-\_,#]))(?P<ext>\.\w+)$")
 after_ext = re.compile("(?P<name>{main_name}+?)(?P<sgn>[_.,|`'!+=]*)(?P<ext>\.\w+)$".format(main_name = INCLUDED_IN_NAME))
 add_dot = re.compile("(?P<name>.*?)\.+?[-#,.~]*(?<=[-\_,])(?P<ext>\.\w+)$")
-plib = "\w+_?(.?lib.*.)"
+name_library = "(?P<name>{})[_ ](?P<brackets>(?=\(.*?\)))(?P<Library_name>.*?lib.*?)(?(brackets)(?P<end>\))|\w*?)".format(NAME_DEF)
 pz = "(\.\W+)?([ A.]?z-[A.]*?\.)"
 defice = re.compile("__+")
 regex_exclude = ["dokumen", "pub", "net", 
